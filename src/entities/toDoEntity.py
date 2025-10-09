@@ -1,5 +1,5 @@
 from typing import Optional
-from sqlalchemy import String, Float, Integer, Boolean, ForeignKey
+from sqlalchemy import String, Integer, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
 from src.entities.base import Base
 

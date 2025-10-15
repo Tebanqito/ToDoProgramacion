@@ -7,7 +7,7 @@ class ToDoBase(BaseModel):
     isDone: bool = True
     importance: int = None
 
-class ToDoCreate(ProductBase):
+class ToDoCreate(ToDoBase):
     pass
 
 class ToDoUpdate(BaseModel):
@@ -16,6 +16,6 @@ class ToDoUpdate(BaseModel):
     isDone: Optional[bool] = None
     importance: Optional[int] = None
 
-class ToDoOut(ProductBase):
+class ToDoOut(ToDoBase):
     id: int
     model_config = ConfigDict(from_attributes=True)

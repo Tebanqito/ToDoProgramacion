@@ -2,15 +2,14 @@ from sqlalchemy.orm import Session
 from src.schemas.toDoSchemas import ToDoCreate
 from src.entities.toDoEntity import Product
 
-def create_new_product(db: Session,
-                       toDo: ToDoCreate):
-    newTdDo = Product(
+def createNewToDo(db: Session, toDo: ToDoCreate):
+    newToDo = Product(
         title = toDo.title,
         description = toDo.description,
         isDone = toDo.isDone,
         importance = toDo.importance
     )
-    db.add(newTdDo)
+    db.add(newToDo)
     db.commit()
-    db.refresh(newTdDo)
-    return newTdDo
+    db.refresh(newToDo)
+    return newToDo

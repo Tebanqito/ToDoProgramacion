@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from src.schemas.toDoSchema import toDoCreate, toDoOut, toDoUpdate
-from src.database.dbconfig import dbDependency
+from src.schemas.toDoSchemas import ToDoCreate, ToDoOut, ToDoUpdate
+from src.database.dbConfig import dbDependency
 from src.services.toDoService import createNewToDo
 
 router = APIRouter(
@@ -8,6 +8,6 @@ router = APIRouter(
     tags=["toDo´s"],
 )
 
-@router.post("/create", response_model=toDoOut, status_code=201)
-async def createToDo(db: dbDependency, payload: toDoCreate):
+@router.post("/create", response_model=ToDoOut, status_code=201)
+async def createToDo(db: dbDependency, payload: ToDoCreate):
     return createNewToDo(db, payload)

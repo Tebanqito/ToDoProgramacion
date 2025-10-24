@@ -1,11 +1,9 @@
 from pydantic import BaseModel, ConfigDict
 
 
-class ToDO(BaseModel):
+class Task(BaseModel):
     id: int
-    title: str
+    name: str
     description: str
-    isDone: bool
-    importance: int
 
     model_config = ConfigDict(from_attributes=True)

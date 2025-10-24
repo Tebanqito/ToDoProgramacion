@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.controllers.toDoController import router as toDoRouter
+from src.controllers.task_controller import router as task_router
 
-def registerRoutes(app: FastAPI):
-    app.include_router(toDoRouter)
+def register_routes(app: FastAPI):
+    app.include_router(task_router)

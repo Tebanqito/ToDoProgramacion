@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from src.schemas.task_schema import TaskCreate, TaskOut, TaskUpdate
-from src.database.dbconfig import db_dependency
+from src.database.dbConfig import db_dependency
 from src.services.task_service import (
     create_new_task, 
     delete_task_by_id, 

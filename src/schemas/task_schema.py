@@ -2,7 +2,6 @@ from typing import Optional
 from pydantic import BaseModel, ConfigDict
 
 class TaskBase(BaseModel):
-    id: int
     name: str
     description: str
 
